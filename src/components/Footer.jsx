@@ -1,25 +1,31 @@
 import React from "react"
-
 import styled from "styled-components"
 import { Link } from "gatsby"
-import { BiHappyHeartEyes } from "@react-icons/all-files/bi/BiHappyHeartEyes"
+import { BiHappyBeaming } from "@react-icons/all-files/bi/BiHappyBeaming"
 
-export const Nav = styled.footer`
+const FooterContainer = styled.footer`
   display: flex;
-  justify-content: center;
+  gap: 4px;
   align-items: center;
-  font-size: 1rem;
+  justify-content: center;
+  height: 20px;
+  margin: 12px 0;
+  width: 100%;
 `
 
-export const Name = styled(Link)`
-  justify-self: start;
+const Name = styled(Link)`
   cursor: pointer;
   text-decoration: none;
-  font-size: 1.5rem;
-  display: flex;
-  align-items: center;
+  color: #ffffff;
+  font-weight: bold;
 `
 
 export const Footer = () => {
-  return <Footer>Hola</Footer>
+  return (
+    <FooterContainer>
+      © {new Date().getFullYear()} &middot; Create by
+      <Name to="https://github.com/maxiCalderonBuono">Maxi Calderón</Name>
+      <BiHappyBeaming size={20} />
+    </FooterContainer>
+  )
 }

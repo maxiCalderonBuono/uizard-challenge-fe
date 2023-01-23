@@ -11,6 +11,7 @@ export const Nav = styled.nav`
   font-size: 1rem;
   top: 0;
   z-index: 999;
+  backdrop-filter: blur(10px);
 `
 
 export const NavbarContainer = styled.nav`
@@ -27,6 +28,8 @@ export const NavLogo = styled(Link)`
   cursor: pointer;
   text-decoration: none;
   font-size: 1.5rem;
+  color: #ffffff;
+  font-weight: bold;
   display: flex;
   align-items: center;
 `
