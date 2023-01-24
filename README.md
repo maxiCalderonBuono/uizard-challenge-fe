@@ -4,7 +4,7 @@
 
 # + :smiley: Result!
 
-## Go to [Awsome News]()
+## Go to [Awsome News](https://awsomenews.netlify.app/)
 
 # + :camera: Snaps!
 

@@ -1,3 +1,4 @@
+import { compareDesc } from "date-fns"
 import { useStaticQuery, graphql } from "gatsby"
 
 export const useNewsInfo = () => {
@@ -15,5 +16,9 @@ export const useNewsInfo = () => {
     }
   `)
 
-  return allFirstNews.nodes
+  const sortedData = allFirstNews.nodes.sort((a, b) =>
+    compareDesc(Number(a.date), Number(b.date))
+  )
+
+  return sortedData
 }

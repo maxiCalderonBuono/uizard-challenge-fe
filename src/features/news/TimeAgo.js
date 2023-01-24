@@ -1,8 +1,17 @@
 import React from "react"
-import { formatDistanceToNow, parseISO } from "date-fns"
+import {
+  compareAsc,
+  formatDistanceToNow,
+  fromUnixTime,
+  parseISO,
+} from "date-fns"
 
 export const TimeAgo = ({ timeStamp }) => {
-  const wrote = new Date(Number(timeStamp)).toISOString()
+  const wrote = fromUnixTime(timeStamp).toISOString()
+
+  const comp = compareAsc(1674514520, 1674524177)
+
+  console.log(comp)
 
   let timeAgo = ""
   if (wrote) {
