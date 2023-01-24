@@ -1,13 +1,11 @@
 import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 
 import { Navbar } from "./Navbar"
 import "./layout.css"
-import { Sidebar } from "./Sidebar"
 
-import { Preview } from "./Preview"
 import { Footer } from "./Footer"
+import { NewsScreen } from "../features/news/NewsScreen"
 
 const Main = styled.main`
   display: flex;
@@ -20,7 +18,7 @@ export const Container = styled.div`
   min-height: calc(100vh - 80px);
   gap: 12px;
   width: 100%;
-  max-width: 1000px;
+  max-width: 1200px;
   grid-template-columns: 1fr 3fr;
 `
 
@@ -30,8 +28,7 @@ const Layout = ({ children }) => {
       <Navbar />
       <Main>
         <Container>
-          <Sidebar />
-          <Preview />
+          <NewsScreen />
         </Container>
       </Main>
       <Footer />

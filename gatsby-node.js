@@ -13,14 +13,33 @@ exports.createPages = async ({ actions }) => {
     defer: true,
   })
 }
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions
+  const typeDefs = `
+    type AllFirstNews implements Node {
+      nodes: Nodes!
+    }
+
+       type Nodes  {
+        id: ID!
+        author: String!
+        date: String!
+        title: String!
+        url: String!
+    }
+  `
+  createTypes(typeDefs)
+}
 
 exports.sourceNodes = ({ actions }) => {
   const { createNode } = actions
+
   return new Promise((resolve, reject) => {
     axios
       .get(`https://hacker-news.firebaseio.com/v0/topstories.json`)
-      .then(res => {
-        res.data.slice(0, 10).map(post => {
+      .then(res => res.data.slice(0, 10))
+      .then(res =>
+        res.map(post => {
           axios
             .get(`https://hacker-news.firebaseio.com/v0/item/${post}.json`)
             .then(({ data }) => {
@@ -44,9 +63,9 @@ exports.sourceNodes = ({ actions }) => {
               postNode.internal.contentDigest = contentDigest
 
               createNode(postNode)
+              resolve()
             })
         })
-        resolve()
-      })
+      )
   })
 }
