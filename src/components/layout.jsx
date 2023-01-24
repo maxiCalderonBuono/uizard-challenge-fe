@@ -13,12 +13,18 @@ const Main = styled.main`
 `
 
 export const Container = styled.div`
-  display: grid;
+  display: flex;
+  flex-direction: column;
   min-height: calc(100vh - 80px);
   gap: 12px;
   width: 100%;
   max-width: 1200px;
-  grid-template-columns: 1fr 3fr;
+
+  @media (min-width: 768px) {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: 1fr 3fr;
+  }
 `
 
 const Layout = ({ children }) => {

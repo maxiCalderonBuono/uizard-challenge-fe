@@ -15,6 +15,10 @@ const PostContainer = styled.div`
   color: #2e3039;
   width: 300px;
   padding: 12px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `
 
 const Header = styled.div`
