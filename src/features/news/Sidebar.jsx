@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useRef } from "react"
 import styled from "styled-components"
 import { PostExcerpt } from "./PostExcerpt"
 
@@ -32,12 +32,22 @@ const PostsContainer = styled.div`
 `
 
 export const Sidebar = ({ news, setPost }) => {
+  const view = useRef(null)
+
+  const scrollToElement = () =>
+    view.current.scrollIntoView({ behavior: "smooth", block: "end" })
+
   return (
     <SidebarContainer>
-      <Title>Top News</Title>
+      <Title ref={view}>Top News</Title>
       <PostsContainer>
         {news.map(post => (
-          <PostExcerpt key={post.id} news={post} setPost={setPost} />
+          <PostExcerpt
+            key={post.id}
+            news={post}
+            setPost={setPost}
+            scroll={scrollToElement}
+          />
         ))}
       </PostsContainer>
     </SidebarContainer>

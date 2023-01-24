@@ -12,7 +12,7 @@ module.exports = {
     title: `Awsome news`,
     description: `Stay informed with the latest breaking news and top stories from around the world`,
     author: `Maximiliano Calderón`,
-    siteUrl: ` `,
+    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
   plugins: [
     `gatsby-plugin-image`,

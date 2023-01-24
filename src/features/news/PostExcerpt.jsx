@@ -46,11 +46,12 @@ const Button = styled.div`
   margin: 16px 0 0 0;
 `
 
-export const PostExcerpt = ({ news, setPost }) => {
-  const { id, author, date, title, url } = news
+export const PostExcerpt = ({ news, setPost, scroll }) => {
+  const { id, author, date, title } = news
 
   const handleOnClick = () => {
     setPost(id)
+    scroll()
   }
 
   return (

@@ -21,7 +21,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     }
 
        type Nodes  {
-        id: ID!
+        id: String!
         author: String!
         date: String!
         title: String!

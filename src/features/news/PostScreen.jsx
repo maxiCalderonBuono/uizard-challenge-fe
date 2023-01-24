@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { NothingSelected } from "./NothingSelected"
 
 const PostScreenContainer = styled.section`
   display: flex;
@@ -18,20 +19,25 @@ const Title = styled.p`
   width: 100%;
 `
 
-export const PostScreen = ({ news, post }) => {
-  console.log(post)
-  const filteredData = news.filter(draft => (draft.id = post))
-
-  console.log(filteredData.url)
+export const PostScreen = ({ filteredData }) => {
   return (
     <PostScreenContainer>
-      <Title>PostScreen</Title>
-      <iframe
-        src="https://github.blog/changelog/2023-01-23-github-sponsors-will-stop-supporting-paypal/"
-        width="100%"
-        height="100%"
-        style={{ border: "none" }}
-      />
+      <Title>
+        {filteredData?.length === 0 || !filteredData
+          ? "PostScreen"
+          : filteredData.title}
+      </Title>
+
+      {filteredData?.length === 0 || !filteredData ? (
+        <NothingSelected />
+      ) : (
+        <iframe
+          src={filteredData.url}
+          width="100%"
+          height="100%"
+          style={{ border: "none" }}
+        />
+      )}
     </PostScreenContainer>
   )
 }

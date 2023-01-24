@@ -5,14 +5,16 @@ import { Sidebar } from "./Sidebar"
 
 export const NewsScreen = () => {
   const [post, setPost] = useState("")
+
   const news = useNewsInfo()
+
+  const [filteredData] = news.filter(news => news.id === post)
 
   return (
     <>
       <Sidebar news={news} setPost={setPost} />
-      <div>
-        <PostScreen news={news} post={post} />
-      </div>
+
+      <PostScreen filteredData={filteredData} />
     </>
   )
 }
