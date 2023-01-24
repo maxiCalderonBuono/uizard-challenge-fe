@@ -9,6 +9,8 @@
 # + :camera: Snaps!
 
 ![Home](https://res.cloudinary.com/dvqlenul5/image/upload/v1674531704/Home_doyyto.png)
+![GraphQl query](https://res.cloudinary.com/dvqlenul5/image/upload/v1674537639/graphql_a7wfs7.png)
+![Query from Gatsby](https://res.cloudinary.com/dvqlenul5/image/upload/v1674537715/gatsby_hbagun.png)
 
 ## :muscle: Development
 
