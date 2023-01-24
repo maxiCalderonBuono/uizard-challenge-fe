@@ -25,7 +25,7 @@ export const Footer = () => {
     <FooterContainer>
       © {new Date().getFullYear()} &middot; Create by
       <Name to="https://github.com/maxiCalderonBuono">Maxi Calderón</Name>
-      <BiHappyBeaming size={20} />
+      <BiHappyBeaming size={20} />- Enjoy!
     </FooterContainer>
   )
 }
