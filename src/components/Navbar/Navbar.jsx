@@ -1,7 +1,6 @@
 import React from "react"
 
 import { IconContext } from "@react-icons/all-files"
-
 import { Nav, NavbarContainer, NavIcon, NavLogo } from "./index"
 
 export const Navbar = () => {

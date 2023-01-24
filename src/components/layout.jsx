@@ -3,7 +3,6 @@ import styled from "styled-components"
 
 import { Navbar } from "./Navbar"
 import "./layout.css"
-
 import { Footer } from "./Footer"
 import { NewsScreen } from "../features/news/NewsScreen"
 

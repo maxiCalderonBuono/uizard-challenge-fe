@@ -36,6 +36,7 @@ export const PostScreen = ({ filteredData }) => {
           width="100%"
           height="100%"
           style={{ border: "none" }}
+          title="News screen"
         />
       )}
     </PostScreenContainer>
